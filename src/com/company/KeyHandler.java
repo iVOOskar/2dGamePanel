@@ -3,11 +3,11 @@ package com.company;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class keyInputs implements KeyListener {
-    public boolean up;
-    public boolean down;
-    public boolean right;
-    public boolean left;
+public class KeyHandler implements KeyListener {
+    public boolean upPressed;
+    public boolean downPressed;
+    public boolean rightPressed;
+    public boolean leftPressed;
     public boolean boostRight;
     public boolean boostLeft;
     @Override
@@ -18,16 +18,16 @@ public class keyInputs implements KeyListener {
     public void keyPressed(KeyEvent e) {
         int code=e.getKeyCode();
         if(code==KeyEvent.VK_W){
-            up=true;
+            upPressed=true;
         }
         if(code==KeyEvent.VK_A){
-            left=true;
+            leftPressed=true;
         }
         if(code==KeyEvent.VK_S){
-            down=true;
+            downPressed=true;
         }
         if(code==KeyEvent.VK_D){
-            right=true;
+            rightPressed=true;
         }
         if(code==KeyEvent.VK_E){
             boostRight=true;
@@ -41,16 +41,16 @@ public class keyInputs implements KeyListener {
     public void keyReleased(KeyEvent e) {
         int code=e.getKeyCode();
         if(code==KeyEvent.VK_W){
-            up=false;
+            upPressed=false;
         }
         if(code==KeyEvent.VK_A){
-            left=false;
+            leftPressed=false;
         }
         if(code==KeyEvent.VK_S){
-            down=false;
+            downPressed=false;
         }
         if(code==KeyEvent.VK_D){
-            right=false;
+            rightPressed=false;
         }
         if(code==KeyEvent.VK_E){
             boostRight=false;
@@ -59,5 +59,4 @@ public class keyInputs implements KeyListener {
             boostLeft=false;
         }
     }
-    
 }
